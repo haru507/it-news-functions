@@ -1,0 +1,23 @@
+{
+  "name": "it_news_functions",
+  "version": "1.0.0",
+  "description": "Function to Retrieve and Send IT-related Articles via Chat",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.13.0",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "bin": {
+    "qiita-cli": "dist/index.js"
+  }
+}
