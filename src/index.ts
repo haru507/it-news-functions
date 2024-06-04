@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 import axios from "axios";
-import * as dotenv from "dotenv";
+// import * as dotenv from "dotenv";
 import { Qiita } from "@/types/qiita";
 
-dotenv.config({ path: __dirname+'/.env' });
+// dotenv.config({ path: __dirname+'/.env' });
 
 export async function main() {
     const res = await axios.get<Qiita[]>("https://qiita.com/api/v2/items");
-
     const webhookUrl: string = process.env.DISCORD_WEB_HOOK_URL ?? "";
 
     res.data.map(async data => {
