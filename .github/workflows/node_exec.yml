@@ -27,16 +27,16 @@ jobs:
         run: pnpm install
 
       - name: note main action...
-        run: pnpm ts-node src/note/index.ts
+        run: pnpm ts-node -r tsconfig-paths/register src/note/index.ts
         env:
           DISCORD_WEB_HOOK_URL_FOR_NOTE: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_NOTE }}
 
       - name: qiita main action...
-        run: pnpm ts-node src/qiita/index.ts
+        run: pnpm ts-node -r tsconfig-paths/register src/qiita/index.ts
         env:
           DISCORD_WEB_HOOK_URL_FOR_QIITA: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_QIITA }}
 
       - name: zenn main action...
-        run: pnpm ts-node src/zenn/index.ts
+        run: pnpm ts-node -r tsconfig-paths/register src/zenn/index.ts
         env:
           DISCORD_WEB_HOOK_URL_FOR_ZENN: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_ZENN }}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { getLocalEnv } from "@/get-local-env"
-import type { DiscordWebhookData } from "@/types/discord"
+import type { DiscordWebhookData } from "@/commons/discord"
+import { getLocalEnv } from "@/commons/get-local-env"
 import type { Zenn } from "@/zenn/types/zenn"
 import axios from "axios"
 

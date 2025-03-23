@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { getLocalEnv } from "@/get-local-env"
+import type { DiscordWebhookData } from "@/commons/discord"
+import { getLocalEnv } from "@/commons/get-local-env"
 import type { Data } from "@/note/types/note"
-import type { DiscordWebhookData } from "@/types/discord"
 import axios from "axios"
 
 const NOTE_URL = "https://note.com/api/v1/categories/tech?note_intro_only=true&sort=new&page=1"

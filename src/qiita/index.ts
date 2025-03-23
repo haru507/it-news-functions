@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { getLocalEnv } from "@/get-local-env"
+import type { DiscordWebhookData } from "@/commons/discord"
+import { getLocalEnv } from "@/commons/get-local-env"
 import type { Qiita } from "@/qiita/types/qiita"
-import type { DiscordWebhookData } from "@/types/discord"
 import axios from "axios"
 
 const QIITA_URL = "https://qiita.com/api/v2/items"
