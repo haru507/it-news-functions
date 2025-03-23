@@ -36,7 +36,6 @@ export async function main() {
       })
       .catch(error => {
         console.error("Error sending webhook:", error)
-        throw new Error(error.message)
       })
   }
 }

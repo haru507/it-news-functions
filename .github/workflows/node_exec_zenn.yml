@@ -2,12 +2,12 @@ name: 記事取得_定期実行
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
-    - cron:  '0 3,9 * * *'
+    - cron: "10 3,9 * * *"
 
 jobs:
-  test:
+  zenn:
     if: ${{ github.event.pull_request.draft == false }}
     runs-on: ubuntu-latest
 
@@ -18,23 +18,13 @@ jobs:
       - name: Setup Node.js with Volta
         uses: volta-cli/action@v1
         with:
-          node-version: '20.18.0'
+          node-version: "20.18.0"
 
       - name: Install pnpm
         run: volta install pnpm@10.0.0
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: note main action...
-        run: pnpm ts-node -r tsconfig-paths/register src/note/index.ts
-        env:
-          DISCORD_WEB_HOOK_URL_FOR_NOTE: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_NOTE }}
-
-      - name: qiita main action...
-        run: pnpm ts-node -r tsconfig-paths/register src/qiita/index.ts
-        env:
-          DISCORD_WEB_HOOK_URL_FOR_QIITA: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_QIITA }}
 
       - name: zenn main action...
         run: pnpm ts-node -r tsconfig-paths/register src/zenn/index.ts
