@@ -4,20 +4,27 @@
   "description": "Function to Retrieve and Send IT-related Articles via Chat",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "start": "ts-node-dev --respawn --transpile-only src/qiita/index.ts",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "pnpm biome lint --apply-unsafe ./",
+    "format-only": "pnpm biome format ./ --write",
+    "format": "pnpm format-only && pnpm lint",
+    "ci": "pnpm biome ci ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/node": "^20.13.0",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   },
   "bin": {
     "qiita-cli": "dist/index.js"
-  }
+  },
+  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af"
 }

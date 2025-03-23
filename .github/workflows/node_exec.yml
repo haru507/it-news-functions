@@ -35,7 +35,19 @@ jobs:
       run: npm install
 
     # 実際のコマンド
-    - name: main action...
-      run: ./node_modules/.bin/ts-node src/index.ts
+    - name: note main action...
+      run: npm ts-node src/note/index.ts
       env:
-        DISCORD_WEB_HOOK_URL: ${{ secrets.DISCORD_WEB_HOOK_URL }}
+        DISCORD_WEB_HOOK_URL_FOR_NOTE: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_NOTE }}
+
+    # 実際のコマンド
+    - name: qiita main action...
+      run: npm ts-node src/qiita/index.ts
+      env:
+        DISCORD_WEB_HOOK_URL_FOR_QIITA: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_QIITA }}
+
+    # 実際のコマンド
+    - name: zenn main action...
+      run: npm ts-node src/zenn/index.ts
+      env:
+        DISCORD_WEB_HOOK_URL_FOR_ZENN: ${{ secrets.DISCORD_WEB_HOOK_URL_FOR_ZENN }}

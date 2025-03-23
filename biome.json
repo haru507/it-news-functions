@@ -1,0 +1,92 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"noUnusedImports": "error",
+				"noUnusedVariables": "error",
+				"noEmptyPattern": "error",
+				"noPrecisionLoss": "error",
+				"noRenderReturnValue": "error",
+				"noSelfAssign": "error",
+				"noSetterReturn": "error",
+				"noStringCaseMismatch": "error",
+				"noUnnecessaryContinue": "error",
+				"noUnreachable": "error",
+				"noInvalidConstructorSuper": "error",
+				"noUnsafeOptionalChaining": "error"
+			},
+			"complexity": {
+				"noBannedTypes": "warn",
+				"noExtraBooleanCast": "error",
+				"noForEach": "warn",
+				"noMultipleSpacesInRegularExpressionLiterals": "error",
+				"noStaticOnlyClass": "error",
+				"noUselessConstructor": "error",
+				"noUselessRename": "error",
+				"noUselessSwitchCase": "error",
+				"useLiteralKeys": "error",
+				"useOptionalChain": "error",
+				"useSimplifiedLogicExpression": "error"
+			},
+			"style": {
+				"noArguments": "error",
+				"noNegationElse": "warn",
+				"noNonNullAssertion": "warn",
+				"noParameterAssign": "error",
+				"noUnusedTemplateLiteral": "error",
+				"noVar": "error",
+				"useConst": "error",
+				"useExponentiationOperator": "error",
+				"useNamingConvention": "off",
+				"useSelfClosingElements": "error",
+				"useShorthandArrayType": "error",
+				"useTemplate": "error"
+			}
+		},
+		"ignore": ["node_modules", "pnpm-lock.yaml", "biome.json", "cspell.json"]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"ignore": ["node_modules", "pnpm-lock.yaml", "biome.json", "cspell.json"],
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineEnding": "lf"
+	},
+	"javascript": {
+		"formatter": {
+			"arrowParentheses": "asNeeded",
+			"bracketSameLine": false,
+			"bracketSpacing": true,
+			"indentStyle": "space",
+			"indentWidth": 2,
+			"jsxQuoteStyle": "double",
+			"lineEnding": "lf",
+			"lineWidth": 120,
+			"quoteProperties": "preserve",
+			"quoteStyle": "double",
+			"semicolons": "asNeeded",
+			"trailingCommas": "es5"
+		},
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
+		},
+		"formatter": {
+			"enabled": true,
+			"indentWidth": 2,
+			"indentStyle": "space",
+			"lineWidth": 120
+		}
+	}
+}
